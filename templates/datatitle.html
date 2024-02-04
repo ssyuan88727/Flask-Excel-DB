@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block title %}DataTitle 標題{% endblock %}
+{% block main %}{% endblock %}
+{% block sets %}
+<script>
+  const sets = {
+    post_url: "/post_datatitle",
+    btns: ["query"],
+    h_sheets: "DataTitles",
+    b_sheets: "",
+    body_is_open: false,
+    DataTitles: new Array(),
+    data: new Array()
+  };
+</script>
+{% endblock %}
+{% block script %}{% endblock %}

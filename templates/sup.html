@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block title %}Suppliers 廠商主檔{% endblock %}
+{% block main %}{% endblock %}
+{% block sets %}
+<script>
+  const sets = {
+    post_url: "/post_sup",
+    btns: ["add_new", "query", "del"],
+    h_sheets: "SUPPLIERS",
+    b_sheets: "",
+    body_is_open: false,
+    DataTitles: new Array(),
+    data: new Array(),
+    render_columns: ["checkbox", "action", "del"]
+  };
+</script>
+{% endblock %}
+{% block script %}{% endblock %}

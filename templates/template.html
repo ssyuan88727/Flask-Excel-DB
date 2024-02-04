@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/package/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/package/datatables.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/package/fontawesome.all.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/package/sweetalert2.min.css')}}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">MERP</a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li v-for="page in pages" class="nav-item">
+            <a :id="page.id" class="nav-link active" :href="page.href">%{ page.text }%</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-3">
+    <h1>{% block header %}{% endblock %}</h1>
+    <div id="btns">
+      <button v-for="btn in btns" class="btn btn-dark me-3" @click="btn_method(btn.method)">
+        <i :class="btn.icon"></i> %{ btn.text }%
+      </button>
+    </div>
+    <div class="d-flex jc-center ai-center">
+      <form id="add_new" method="post" enctype="multipart/form-data" class="mt-3 w-75" style="display: none;"></form>
+      <form id="query" method="post" enctype="multipart/form-data" class="mt-3 w-75" style="display: none;"></form>
+    </div>
+    <div id="inputs">
+      <add_new></add_new>
+      <query></query>
+    </div>
+    <div class="table-responsive mt-3">
+      <table id="table" class="w-100 table-hover"></table>
+    </div>
+    {% block main %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='js/package/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/datatables.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/zh-HANT.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/fontawesome.all.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/sweetalert2@11.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/package/vue.global.min.js') }}"></script>
+  {% block sets %}{% endblock %}
+  <script src="{{ url_for('static', filename='js/module.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/vue/vue.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/template.js') }}"></script>
+  {% block script %}{% endblock %}
+</body>
+
+</html>

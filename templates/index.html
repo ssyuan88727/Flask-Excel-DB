@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block title %}Home 首頁{% endblock %}
+{% block main %}
+<div class="bg-light p-5 rounded">
+  <h1>Hello World!</h1>
+  <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit vero soluta alias nesciunt nihil
+    voluptate qui quae et nemo sequi. Hic mollitia at maxime praesentium tempora deleniti possimus a officiis.</p>
+  <a href="https://www.instagram.com/dlwlrma/" class="btn btn-lg btn-primary" role="button">View IU Instagram</a>
+</div>
+{% endblock %}
+{% block sets %}
+<script>
+  const sets = {
+    post_url: "",
+    btns: new Array(),
+    h_sheets: "",
+    b_sheets: "",
+    body_is_open: true,
+    DataTitles: new Array(),
+    data: new Array()
+  };
+</script>
+{% endblock %}
+{% block script %}{% endblock %}

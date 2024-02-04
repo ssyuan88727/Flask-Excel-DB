@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block title %}Sale 銷售紀錄{% endblock %}
+{% block main %}{% endblock %}
+{% block sets %}
+<script>
+  const sets = {
+    post_url: "/post_order",
+    btns: ["add_new", "query", "del", "import_xlsx"],
+    h_sheets: "SALE_H",
+    b_sheets: "SALE_B",
+    body_is_open: true,
+    DataTitles: new Array(),
+    data: new Array()
+  };
+</script>
+{% endblock %}
+{% block script %}{% endblock %}
